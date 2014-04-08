@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		68C78F6618F3CA8C0094C5B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C78F6518F3CA8C0094C5B8 /* Foundation.framework */; };
+		68C78F6818F3CA8C0094C5B8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C78F6718F3CA8C0094C5B8 /* CoreGraphics.framework */; };
+		68C78F6A18F3CA8C0094C5B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C78F6918F3CA8C0094C5B8 /* UIKit.framework */; };
+		68C78F7018F3CA8C0094C5B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68C78F6E18F3CA8C0094C5B8 /* InfoPlist.strings */; };
+		68C78F7218F3CA8C0094C5B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C78F7118F3CA8C0094C5B8 /* main.m */; };
+		68C78F7618F3CA8C0094C5B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C78F7518F3CA8C0094C5B8 /* AppDelegate.m */; };
+		68C78F7918F3CA8C0094C5B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68C78F7718F3CA8C0094C5B8 /* Main.storyboard */; };
+		68C78F7C18F3CA8C0094C5B8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C78F7B18F3CA8C0094C5B8 /* ViewController.m */; };
+		68C78F7E18F3CA8C0094C5B8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68C78F7D18F3CA8C0094C5B8 /* Images.xcassets */; };
+		68C78F8518F3CA8D0094C5B8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C78F8418F3CA8D0094C5B8 /* XCTest.framework */; };
+		68C78F8618F3CA8D0094C5B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C78F6518F3CA8C0094C5B8 /* Foundation.framework */; };
+		68C78F8718F3CA8D0094C5B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68C78F6918F3CA8C0094C5B8 /* UIKit.framework */; };
+		68C78F8F18F3CA8D0094C5B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68C78F8D18F3CA8D0094C5B8 /* InfoPlist.strings */; };
+		68C78F9118F3CA8D0094C5B8 /* WKLocationManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C78F9018F3CA8D0094C5B8 /* WKLocationManagerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		68C78F8818F3CA8D0094C5B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 68C78F5A18F3CA8C0094C5B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 68C78F6118F3CA8C0094C5B8;
+			remoteInfo = WKLocationManager;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		68C78F6218F3CA8C0094C5B8 /* WKLocationManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WKLocationManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		68C78F6518F3CA8C0094C5B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		68C78F6718F3CA8C0094C5B8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		68C78F6918F3CA8C0094C5B8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		68C78F6D18F3CA8C0094C5B8 /* WKLocationManager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WKLocationManager-Info.plist"; sourceTree = "<group>"; };
+		68C78F6F18F3CA8C0094C5B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		68C78F7118F3CA8C0094C5B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		68C78F7318F3CA8C0094C5B8 /* WKLocationManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WKLocationManager-Prefix.pch"; sourceTree = "<group>"; };
+		68C78F7418F3CA8C0094C5B8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		68C78F7518F3CA8C0094C5B8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		68C78F7818F3CA8C0094C5B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		68C78F7A18F3CA8C0094C5B8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		68C78F7B18F3CA8C0094C5B8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		68C78F7D18F3CA8C0094C5B8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		68C78F8318F3CA8D0094C5B8 /* WKLocationManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WKLocationManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		68C78F8418F3CA8D0094C5B8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		68C78F8C18F3CA8D0094C5B8 /* WKLocationManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WKLocationManagerTests-Info.plist"; sourceTree = "<group>"; };
+		68C78F8E18F3CA8D0094C5B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		68C78F9018F3CA8D0094C5B8 /* WKLocationManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKLocationManagerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		68C78F5F18F3CA8C0094C5B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68C78F6818F3CA8C0094C5B8 /* CoreGraphics.framework in Frameworks */,
+				68C78F6A18F3CA8C0094C5B8 /* UIKit.framework in Frameworks */,
+				68C78F6618F3CA8C0094C5B8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68C78F8018F3CA8D0094C5B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68C78F8518F3CA8D0094C5B8 /* XCTest.framework in Frameworks */,
+				68C78F8718F3CA8D0094C5B8 /* UIKit.framework in Frameworks */,
+				68C78F8618F3CA8D0094C5B8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		68C78F5918F3CA8C0094C5B8 = {
+			isa = PBXGroup;
+			children = (
+				68C78F6B18F3CA8C0094C5B8 /* WKLocationManager */,
+				68C78F8A18F3CA8D0094C5B8 /* WKLocationManagerTests */,
+				68C78F6418F3CA8C0094C5B8 /* Frameworks */,
+				68C78F6318F3CA8C0094C5B8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		68C78F6318F3CA8C0094C5B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				68C78F6218F3CA8C0094C5B8 /* WKLocationManager.app */,
+				68C78F8318F3CA8D0094C5B8 /* WKLocationManagerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		68C78F6418F3CA8C0094C5B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				68C78F6518F3CA8C0094C5B8 /* Foundation.framework */,
+				68C78F6718F3CA8C0094C5B8 /* CoreGraphics.framework */,
+				68C78F6918F3CA8C0094C5B8 /* UIKit.framework */,
+				68C78F8418F3CA8D0094C5B8 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		68C78F6B18F3CA8C0094C5B8 /* WKLocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				68C78F7418F3CA8C0094C5B8 /* AppDelegate.h */,
+				68C78F7518F3CA8C0094C5B8 /* AppDelegate.m */,
+				68C78F7718F3CA8C0094C5B8 /* Main.storyboard */,
+				68C78F7A18F3CA8C0094C5B8 /* ViewController.h */,
+				68C78F7B18F3CA8C0094C5B8 /* ViewController.m */,
+				68C78F7D18F3CA8C0094C5B8 /* Images.xcassets */,
+				68C78F6C18F3CA8C0094C5B8 /* Supporting Files */,
+			);
+			path = WKLocationManager;
+			sourceTree = "<group>";
+		};
+		68C78F6C18F3CA8C0094C5B8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				68C78F6D18F3CA8C0094C5B8 /* WKLocationManager-Info.plist */,
+				68C78F6E18F3CA8C0094C5B8 /* InfoPlist.strings */,
+				68C78F7118F3CA8C0094C5B8 /* main.m */,
+				68C78F7318F3CA8C0094C5B8 /* WKLocationManager-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		68C78F8A18F3CA8D0094C5B8 /* WKLocationManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				68C78F9018F3CA8D0094C5B8 /* WKLocationManagerTests.m */,
+				68C78F8B18F3CA8D0094C5B8 /* Supporting Files */,
+			);
+			path = WKLocationManagerTests;
+			sourceTree = "<group>";
+		};
+		68C78F8B18F3CA8D0094C5B8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				68C78F8C18F3CA8D0094C5B8 /* WKLocationManagerTests-Info.plist */,
+				68C78F8D18F3CA8D0094C5B8 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		68C78F6118F3CA8C0094C5B8 /* WKLocationManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68C78F9418F3CA8D0094C5B8 /* Build configuration list for PBXNativeTarget "WKLocationManager" */;
+			buildPhases = (
+				68C78F5E18F3CA8C0094C5B8 /* Sources */,
+				68C78F5F18F3CA8C0094C5B8 /* Frameworks */,
+				68C78F6018F3CA8C0094C5B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WKLocationManager;
+			productName = WKLocationManager;
+			productReference = 68C78F6218F3CA8C0094C5B8 /* WKLocationManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+		68C78F8218F3CA8D0094C5B8 /* WKLocationManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68C78F9718F3CA8D0094C5B8 /* Build configuration list for PBXNativeTarget "WKLocationManagerTests" */;
+			buildPhases = (
+				68C78F7F18F3CA8D0094C5B8 /* Sources */,
+				68C78F8018F3CA8D0094C5B8 /* Frameworks */,
+				68C78F8118F3CA8D0094C5B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				68C78F8918F3CA8D0094C5B8 /* PBXTargetDependency */,
+			);
+			name = WKLocationManagerTests;
+			productName = WKLocationManagerTests;
+			productReference = 68C78F8318F3CA8D0094C5B8 /* WKLocationManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		68C78F5A18F3CA8C0094C5B8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "秦 道平";
+				TargetAttributes = {
+					68C78F8218F3CA8D0094C5B8 = {
+						TestTargetID = 68C78F6118F3CA8C0094C5B8;
+					};
+				};
+			};
+			buildConfigurationList = 68C78F5D18F3CA8C0094C5B8 /* Build configuration list for PBXProject "WKLocationManager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 68C78F5918F3CA8C0094C5B8;
+			productRefGroup = 68C78F6318F3CA8C0094C5B8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				68C78F6118F3CA8C0094C5B8 /* WKLocationManager */,
+				68C78F8218F3CA8D0094C5B8 /* WKLocationManagerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		68C78F6018F3CA8C0094C5B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68C78F7E18F3CA8C0094C5B8 /* Images.xcassets in Resources */,
+				68C78F7018F3CA8C0094C5B8 /* InfoPlist.strings in Resources */,
+				68C78F7918F3CA8C0094C5B8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68C78F8118F3CA8D0094C5B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68C78F8F18F3CA8D0094C5B8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		68C78F5E18F3CA8C0094C5B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68C78F7C18F3CA8C0094C5B8 /* ViewController.m in Sources */,
+				68C78F7618F3CA8C0094C5B8 /* AppDelegate.m in Sources */,
+				68C78F7218F3CA8C0094C5B8 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68C78F7F18F3CA8D0094C5B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68C78F9118F3CA8D0094C5B8 /* WKLocationManagerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		68C78F8918F3CA8D0094C5B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 68C78F6118F3CA8C0094C5B8 /* WKLocationManager */;
+			targetProxy = 68C78F8818F3CA8D0094C5B8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		68C78F6E18F3CA8C0094C5B8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68C78F6F18F3CA8C0094C5B8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		68C78F7718F3CA8C0094C5B8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68C78F7818F3CA8C0094C5B8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		68C78F8D18F3CA8D0094C5B8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68C78F8E18F3CA8D0094C5B8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		68C78F9218F3CA8D0094C5B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		68C78F9318F3CA8D0094C5B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		68C78F9518F3CA8D0094C5B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WKLocationManager/WKLocationManager-Prefix.pch";
+				INFOPLIST_FILE = "WKLocationManager/WKLocationManager-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		68C78F9618F3CA8D0094C5B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WKLocationManager/WKLocationManager-Prefix.pch";
+				INFOPLIST_FILE = "WKLocationManager/WKLocationManager-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		68C78F9818F3CA8D0094C5B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WKLocationManager.app/WKLocationManager";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WKLocationManager/WKLocationManager-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "WKLocationManagerTests/WKLocationManagerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		68C78F9918F3CA8D0094C5B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WKLocationManager.app/WKLocationManager";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WKLocationManager/WKLocationManager-Prefix.pch";
+				INFOPLIST_FILE = "WKLocationManagerTests/WKLocationManagerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		68C78F5D18F3CA8C0094C5B8 /* Build configuration list for PBXProject "WKLocationManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68C78F9218F3CA8D0094C5B8 /* Debug */,
+				68C78F9318F3CA8D0094C5B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68C78F9418F3CA8D0094C5B8 /* Build configuration list for PBXNativeTarget "WKLocationManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68C78F9518F3CA8D0094C5B8 /* Debug */,
+				68C78F9618F3CA8D0094C5B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		68C78F9718F3CA8D0094C5B8 /* Build configuration list for PBXNativeTarget "WKLocationManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68C78F9818F3CA8D0094C5B8 /* Debug */,
+				68C78F9918F3CA8D0094C5B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 68C78F5A18F3CA8C0094C5B8 /* Project object */;
+}
