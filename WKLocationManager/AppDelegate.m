@@ -7,12 +7,18 @@
 //
 
 #import "AppDelegate.h"
-
+#import "RootViewController.h"
+#import "WKLocationManager.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    RootViewController* viewController=[[[RootViewController alloc]init] autorelease];
+    UINavigationController* navigation=[[[UINavigationController alloc]initWithRootViewController:viewController] autorelease];
+    self.window.rootViewController=navigation;
+    [self.window makeKeyAndVisible];
+    [[WKLocationManager sharedLocationManager] startUpdatingLocation];
     return YES;
 }
 							
