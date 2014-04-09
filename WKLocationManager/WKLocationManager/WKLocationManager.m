@@ -11,6 +11,7 @@
 #define WKLOCATIONMANAGER_DEFAULT_LONGITUDE 120.288553
 #define WKLOCATIONMANAGER_DEFAULT_LATITUDE 31.565137
 #define WKLOCATIONMANAGER_DEFAULT_ADDRESS @"无锡广电附近"
+#pragma mark - WKCoordinate2D
 @implementation WKCoordinate2D
 @dynamic traceQueryLatLng;
 -(id)init{
@@ -21,49 +22,19 @@
     }
     return self;
 }
+-(id)initWithLatitude:(CLLocationDegrees)latitude longitude:(CLLocationDegrees)longitude address:(NSString *)address{
+    self=[super init];
+    if (self){
+        [self makeInvalidCoordinate];
+        self.coordinate=CLLocationCoordinate2DMake(latitude, longitude);
+        self.address=self.address;
+        self.gpsType=WKLocationManagerGpsTypeGPS;
+    }
+    return self;
+}
 -(void)dealloc{
     [_address release];
     [super dealloc];
-}
--(BOOL)isOutOfRange{
-//    if (self.coordinate.longitude>120.581790 ||
-//        self.coordinate.longitude<120.070390 ||
-//        self.coordinate.latitude>31.754038 ||
-//        self.coordinate.latitude<31.417765){
-//        return YES;
-//    }
-//    else{
-//        return NO;
-//    }
-    ///如果没有设置就不检查
-    if (!_max_latitude && !_min_latitude && !_max_longitude && !_min_longitude){
-        return NO;
-    }
-    if (self.coordinate.longitude>_max_longitude ||
-        self.coordinate.longitude<_min_longitude ||
-        self.coordinate.latitude>_max_latitude ||
-        self.coordinate.latitude<_min_latitude){
-        return YES;
-    }
-    else{
-        return NO;
-    }
-}
-///默认坐标
--(void)makeDefaultCoordinate{
-    [self makeDefaultCoordinate:CLLocationCoordinate2DMake(WKLOCATIONMANAGER_DEFAULT_LATITUDE, WKLOCATIONMANAGER_DEFAULT_LONGITUDE)
-                        address:WKLOCATIONMANAGER_DEFAULT_ADDRESS];
-}
--(void)makeDefaultCoordinate:(CLLocationCoordinate2D)coordinate address:(NSString *)address{
-    self.coordinate=coordinate;
-    self.address=address;
-    self.gpsType=WKLocationManagerGpsTypeGPS;
-}
--(void)setMaxLatitude:(double)max_latitude maxLongitude:(double)max_longitude minLatitude:(double)min_latitude minLongitude:(double)min_longitude{
-    _max_latitude=max_latitude;
-    _max_longitude=max_longitude;
-    _min_latitude=min_latitude;
-    _min_longitude=min_longitude;
 }
 ///空坐标
 -(void)makeInvalidCoordinate{
@@ -152,6 +123,28 @@ static WKLocationManager *_sharedLocationManager;
 -(WKCoordinate2D*)currentCoordinate{
     return _currentCoordinate;
 }
+#pragma mark range
+-(void)setRangeMaxLatitude:(double)max_latitude maxLongitude:(double)max_longitude minLatitude:(double)min_latitude minLongitude:(double)min_longitude{
+    _max_latitude=max_latitude;
+    _max_longitude=max_longitude;
+    _min_latitude=max_latitude;
+    _min_longitude=max_longitude;
+}
+-(BOOL)isOutOfRange{
+    //如果没有设置就不检查
+    if (!_max_latitude && !_min_latitude && !_max_longitude && !_min_longitude){
+        return NO;
+    }
+    if (self.currentCoordinate.coordinate.longitude>_max_longitude ||
+        self.currentCoordinate.coordinate.longitude<_min_longitude ||
+        self.currentCoordinate.coordinate.latitude>_max_latitude ||
+        self.currentCoordinate.coordinate.latitude<_min_latitude){
+        return YES;
+    }
+    else{
+        return NO;
+    }
+}
 #pragma mark - Actions
 ///开始定位
 -(void)startUpdatingLocation{
@@ -218,8 +211,11 @@ static WKLocationManager *_sharedLocationManager;
     self.currentCoordinate.address=address;
     self.currentCoordinate.gpsType=gpsType;
     ///超出位置，改为默认坐标，发出通知
-    if (self.currentCoordinate.isOutOfRange){
-        [self.currentCoordinate makeDefaultCoordinate];
+    if (self.isOutOfRange){
+        ///设定为默认的位置
+        [_defaultCoordinateWhenOutOfRange retain];
+        [_currentCoordinate release];
+        _defaultCoordinateWhenOutOfRange=_currentCoordinate;
         [[NSNotificationCenter defaultCenter] postNotificationName:WKLocationManagerNotificationLocationOutOfRange object:self.currentCoordinate];
         
     }
@@ -236,13 +232,16 @@ static WKLocationManager *_sharedLocationManager;
     if (newLocation.horizontalAccuracy < 0) return;
     ///如果精度超过100米，就返回，如果定位超过20秒，如果能获得500米的精度，也可以使用
     if (newLocation.horizontalAccuracy<=100 ||
-        (newLocation.horizontalAccuracy<=500 && abs([_startUpdatingLocationTime timeIntervalSinceNow])>=20.0f)
+        (newLocation.horizontalAccuracy<=500 && abs([_startUpdatingLocationTime timeIntervalSinceNow])>=self.timeoutSeconds)
         ){
         self.currentCoordinate.coordinate=newLocation.coordinate;
         self.currentCoordinate.gpsType=WKLocationManagerGpsTypeGPS;
         ///超出无锡的范围,变成一个默认坐标
-        if (self.currentCoordinate.isOutOfRange){
-            [self.currentCoordinate makeDefaultCoordinate];
+        if (self.isOutOfRange){
+            ///设定为默认的坐标
+            [_defaultCoordinateWhenOutOfRange retain];
+            [_currentCoordinate release];
+            _currentCoordinate=_defaultCoordinateWhenOutOfRange;
             ///通知位置超出无锡市
             [[NSNotificationCenter defaultCenter] postNotificationName:WKLocationManagerNotificationLocationOutOfRange object:self.currentCoordinate];
         }

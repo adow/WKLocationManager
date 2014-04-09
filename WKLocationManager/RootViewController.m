@@ -36,6 +36,7 @@
     self.view.backgroundColor=[UIColor whiteColor];
     self.navigationItem.rightBarButtonItem=[[[UIBarButtonItem alloc]initWithTitle:@"Location" style:UIBarButtonItemStylePlain target:self action:@selector(onButtonLocation:)] autorelease];
     self.navigationItem.leftBarButtonItem=[[[UIBarButtonItem alloc]initWithTitle:@"Pop" style:UIBarButtonItemStylePlain target:self action:@selector(onButtonDone:)] autorelease];
+    [[WKLocationManager sharedLocationManager] startUpdatingLocation];
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#pragma mark - WKLocationManagerNotification
 ///定位开始时
 #define WKLocationManagerNotificationUpdateLocationStart @"WKLocationManagerNotificationUpdateStart"
 ///定位完成
@@ -22,34 +23,29 @@
 #define WKLocationManagerNotificationReverseAddressCompleted @"WKLocationManagerNotificationReverseAddressCompleted"
 ///位置超出无锡市范围
 #define WKLocationManagerNotificationLocationOutOfRange @"WKLocationManagerNotificationLocationOutOfRange"
+#pragma mark - WKCoordinate2D
+#pragma mark WKLocationManagerGpsType
 typedef enum WKLocationManagerGpsType:NSUInteger{
     WKLocationManagerGpsTypeGPS=0,
     WKLocationManagerGpsTypeBGPS=1,
 } WKLocationManagerGpsType;
+#pragma mark WKCoordinate2D
 @interface WKCoordinate2D : NSObject{
-    double _max_latitude,_max_longitude,_min_latitude,_min_longitude;
+    
 }
 @property (nonatomic,assign) CLLocationCoordinate2D coordinate;
 @property (nonatomic,assign) WKLocationManagerGpsType gpsType;
 @property (nonatomic,copy) NSString* address;
-///是否在无锡范围内
-@property (nonatomic,readonly) BOOL isOutOfRange;
 ///追踪用来定位的参数
 @property (nonatomic,readonly) NSString* traceQueryLatLng;
-///默认坐标，广电附近
--(void)makeDefaultCoordinate;
-///指定一个默认坐标
--(void)makeDefaultCoordinate:(CLLocationCoordinate2D)coordinate address:(NSString*)address;
+-(id)initWithLatitude:(CLLocationDegrees)latitude longitude:(CLLocationDegrees)longitude address:(NSString*)address;
 ///无效的坐标
 -(void)makeInvalidCoordinate;
 ///当前坐标是否有效
 -(BOOL)isCoordinateValid;
-///设定一个检查范围的区域
--(void)setMaxLatitude:(double)max_latitude
-         maxLongitude:(double)max_longitude
-          minLatitude:(double)min_latitude
-         minLongitude:(double)min_longitude;
 @end
+#pragma mark - WKLocationManager
+#pragma mark WKLocationManagerStopLocationResult
 ///定位结束时的结果
 typedef enum WKLocationManagerStopLocationResult:NSUInteger{
     WKLocationManagerStopLocationResultSucceed=0,
@@ -57,11 +53,15 @@ typedef enum WKLocationManagerStopLocationResult:NSUInteger{
     WKLocationManagerStopLocationResultTimeout=2,
     WKLocationManagerStopLocationResultCanceled=3,
 }WKLocationManagerStopLocationResult;
+#pragma mark WKLocationManager
 @interface WKLocationManager : NSObject{
     NSDate* _lastUpdateDate;
     WKCoordinate2D* _currentCoordinate;
+    double _max_latitude,_max_longitude,_min_latitude,_min_longitude;
 }
 @property (nonatomic,readonly) WKCoordinate2D *currentCoordinate;
+///当超出边界时获得的默认位置
+@property (nonatomic,retain) WKCoordinate2D* defaultCoordinateWhenOutOfRange;
 ///最后更新位置的时间
 @property (nonatomic,readonly) NSDate* lastUpdateDate;
 ///是否正在定位
@@ -79,4 +79,11 @@ typedef enum WKLocationManagerStopLocationResult:NSUInteger{
 -(void)updateLocationCoordinate:(CLLocationCoordinate2D)coordinate
                         address:(NSString*)address
                         gpsType:(WKLocationManagerGpsType)gpsType;
+///设定范围
+-(void)setRangeMaxLatitude:(double)max_latitude
+              maxLongitude:(double)max_longitude
+               minLatitude:(double)min_latitude
+              minLongitude:(double)min_longitude;
+///是否在设定范围的外面了
+@property (nonatomic,readonly) BOOL isOutOfRange;
 @end

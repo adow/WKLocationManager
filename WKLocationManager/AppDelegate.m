@@ -18,6 +18,9 @@
     UINavigationController* navigation=[[[UINavigationController alloc]initWithRootViewController:viewController] autorelease];
     self.window.rootViewController=navigation;
     [self.window makeKeyAndVisible];
+    WKCoordinate2D* coordinate=[[[WKCoordinate2D alloc]initWithLatitude:31.565137 longitude:120.288553 address:@"无锡广电附近"] autorelease];
+    [WKLocationManager sharedLocationManager].defaultCoordinateWhenOutOfRange=coordinate;
+    [[WKLocationManager sharedLocationManager] setRangeMaxLatitude:31.754038 maxLongitude:120.581790 minLatitude:31.417765 minLongitude:120.070390];
     [[WKLocationManager sharedLocationManager] startUpdatingLocation];
     return YES;
 }
