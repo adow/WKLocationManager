@@ -21,7 +21,7 @@
 #define WKLocationManagerNotificationUpdateLocationCanceled @"WKLocationManagerNotificationUpdateLocationCanceled"
 ///获取地址
 #define WKLocationManagerNotificationReverseAddressCompleted @"WKLocationManagerNotificationReverseAddressCompleted"
-///位置超出无锡市范围
+///位置超出设定的范围
 #define WKLocationManagerNotificationLocationOutOfRange @"WKLocationManagerNotificationLocationOutOfRange"
 #pragma mark - WKCoordinate2D
 #pragma mark WKLocationManagerGpsType

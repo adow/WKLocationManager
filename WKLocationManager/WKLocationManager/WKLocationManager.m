@@ -8,9 +8,8 @@
 
 #import "WKLocationManager.h"
 #import "WKLocationUtilities.h"
-#define WKLOCATIONMANAGER_DEFAULT_LONGITUDE 120.288553
-#define WKLOCATIONMANAGER_DEFAULT_LATITUDE 31.565137
-#define WKLOCATIONMANAGER_DEFAULT_ADDRESS @"无锡广电附近"
+#define WKLOCATIONMANAGER_BEST_ACCURANCY_METERS 100.0f ///最好的精度
+#define WKLOCATIONMANAGER_ORDINARY_ACCURANCY_METERS 500.0f ///一般的精度
 #pragma mark - WKCoordinate2D
 @implementation WKCoordinate2D
 @dynamic traceQueryLatLng;
@@ -127,8 +126,8 @@ static WKLocationManager *_sharedLocationManager;
 -(void)setRangeMaxLatitude:(double)max_latitude maxLongitude:(double)max_longitude minLatitude:(double)min_latitude minLongitude:(double)min_longitude{
     _max_latitude=max_latitude;
     _max_longitude=max_longitude;
-    _min_latitude=max_latitude;
-    _min_longitude=max_longitude;
+    _min_latitude=min_latitude;
+    _min_longitude=min_longitude;
 }
 -(BOOL)isOutOfRange{
     //如果没有设置就不检查
@@ -231,8 +230,8 @@ static WKLocationManager *_sharedLocationManager;
     ///cached
     if (newLocation.horizontalAccuracy < 0) return;
     ///如果精度超过100米，就返回，如果定位超过20秒，如果能获得500米的精度，也可以使用
-    if (newLocation.horizontalAccuracy<=100 ||
-        (newLocation.horizontalAccuracy<=500 && abs([_startUpdatingLocationTime timeIntervalSinceNow])>=self.timeoutSeconds)
+    if (newLocation.horizontalAccuracy<=WKLOCATIONMANAGER_BEST_ACCURANCY_METERS ||
+        (newLocation.horizontalAccuracy<=WKLOCATIONMANAGER_ORDINARY_ACCURANCY_METERS && abs([_startUpdatingLocationTime timeIntervalSinceNow])>=self.timeoutSeconds)
         ){
         self.currentCoordinate.coordinate=newLocation.coordinate;
         self.currentCoordinate.gpsType=WKLocationManagerGpsTypeGPS;
